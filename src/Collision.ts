@@ -1,8 +1,8 @@
 import { Brick, Ball, Paddle } from './sprites'
 import { CanvasView } from './view/CanvasView'
 
-export class Collison {
-  private checkBrickCollison = (ball: Ball, brick: Brick): boolean => {
+export class Collision {
+  private checkBrickCollision = (ball: Ball, brick: Brick): boolean => {
     if (
       ball.pos.x < brick.pos.x + brick.width &&
       ball.pos.x + ball.width > brick.pos.x &&
@@ -16,7 +16,7 @@ export class Collison {
 
   isCollidingBricks = (ball: Ball, bricks: Brick[]): boolean => {
     bricks.forEach((brick, i) => {
-      if (this.checkBrickCollison(ball, brick)) {
+      if (this.checkBrickCollision(ball, brick)) {
         ball.changeYDirection()
         if (brick.energy === 1) {
           bricks.splice(i, 1)
