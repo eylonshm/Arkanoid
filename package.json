@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build ./src/index.html --no-cache --no-optimize"
+    "build": "parcel build ./src/index.html --no-cache"
   },
   "author": "Eylon Shmilovich",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "parcel": "^2.9.3"
   },
   "dependencies": {
+    "@parcel/watcher": "^2.2.0",
     "parcel-bundler": "^1.12.5"
   }
 }
