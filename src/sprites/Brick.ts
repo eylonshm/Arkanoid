@@ -19,12 +19,16 @@ export class Brick {
     return this.brickHeight
   }
 
-  get position(): Vector {
+  get pos(): Vector {
     return this.brickPosition
   }
 
   get energy(): number {
     return this.brickEnergy
+  }
+
+  get image(): HTMLImageElement {
+    return this.brickImage
   }
 
   set energy(energy: number) {

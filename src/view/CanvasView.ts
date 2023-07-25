@@ -1,7 +1,7 @@
 import { Ball, Brick, Paddle } from '../sprites'
 
 export class CanvasView {
-  private canvas: HTMLCanvasElement
+  canvas: HTMLCanvasElement
   private context: CanvasRenderingContext2D | null
   private scoreDisplay: HTMLObjectElement | null
   private start: HTMLObjectElement | null
@@ -38,8 +38,6 @@ export class CanvasView {
   }
 
   drawBricks(bricks: Brick[]): void {
-    bricks.forEach(brick => this.drawSprite(brick))
-  }
-    
+    bricks.forEach((brick) => this.drawSprite(brick))
   }
 }

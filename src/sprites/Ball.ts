@@ -13,7 +13,11 @@ export class Ball {
     this.ballImage.src = image
   }
 
-  get size(): number {
+  get width(): number {
+    return this.ballSize
+  }
+
+  get height(): number {
     return this.ballSize
   }
 
