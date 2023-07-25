@@ -15,12 +15,18 @@ const gameLoop = (paddle: Paddle, ball: Ball, bricks: Brick[], canvas: CanvasVie
   canvas.drawSprite(ball)
   canvas.drawBricks(bricks)
   collision.isCollidingBall(ball, paddle, canvas)
-  collision.isCollidingBricks(ball, bricks)
+
+  if (collision.isCollidingBricks(ball, bricks)) {
+    score += 1
+    canvas.drawScore(score)
+  }
+  paddle.movePaddle()
   ball.moveBall()
   window.requestAnimationFrame(() => gameLoop(paddle, ball, bricks, canvas, collision))
 }
 
 const startGame = (view: CanvasView): void => {
+  score = 0
   const paddleStartPosition = { x: PADDLE_STARTX, y: view.canvas.height - PADDLE_HEIGHT - 5 }
   const collision = new Collision()
   const paddle = new Paddle(PADDLE_SPEED, PADDLE_WIDTH, PADDLE_HEIGHT, paddleStartPosition, PADDLE_IMAGE)

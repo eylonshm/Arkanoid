@@ -15,6 +15,7 @@ export class Collision {
   }
 
   isCollidingBricks = (ball: Ball, bricks: Brick[]): boolean => {
+    let isCollision = false
     bricks.forEach((brick, i) => {
       if (this.checkBrickCollision(ball, brick)) {
         ball.changeYDirection()
@@ -23,10 +24,10 @@ export class Collision {
         } else {
           brick.energy -= 1
         }
-        return true
+        isCollision = true
       }
     })
-    return false
+    return isCollision
   }
 
   isCollidingBall = (ball: Ball, paddle: Paddle, view: CanvasView): void => {
