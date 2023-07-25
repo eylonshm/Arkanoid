@@ -2,10 +2,10 @@
   "name": "typescript-classes",
   "version": "1.0.0",
   "description": "Simple game using typescript and OOP",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
-    "start": "npx parcel src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel src/index.html",
+    "build": "parcel build --public-url ./ ./src/index.html --dist-dir build"
   },
   "author": "Eylon Shmilovich",
   "license": "ISC",
