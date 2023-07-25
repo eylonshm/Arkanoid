@@ -2,7 +2,7 @@ import { Brick, Ball, Paddle } from './sprites'
 import { CanvasView } from './view/CanvasView'
 
 export class Collison {
-  checkBrickCollison = (ball: Ball, brick: Brick): boolean => {
+  private checkBrickCollison = (ball: Ball, brick: Brick): boolean => {
     if (
       ball.pos.x < brick.pos.x + brick.width &&
       ball.pos.x + ball.width > brick.pos.x &&
