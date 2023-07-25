@@ -11,6 +11,7 @@
     "paths": {
       "~/*": ["./*"]
     },
+    "experimentalDecorators": true,
     "typeRoots": ["src/images/"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
